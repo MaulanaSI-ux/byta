@@ -1,0 +1,140 @@
+:root {
+    /* Palet Pink Mewah */
+    --pink-light: #fbe5e6; /* Latar belakang sangat lembut */
+    --pink-medium: #ffc9d0; /* Highlight */
+    --pink-dark: #e85d75; /* Warna utama (Primary) */
+    --text-dark: #4a4a4a; 
+    --font-heading: 'Great Vibes', cursive; /* Font script/mewah */
+    --font-body: 'Poppins', sans-serif;
+}
+
+body {
+    font-family: var(--font-body);
+    margin: 0;
+    padding: 0;
+    background-color: var(--pink-light);
+    color: var(--text-dark);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* --- Container dan Layout --- */
+.page-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+/* --- Teks dan Tipografi --- */
+h1, h2 {
+    font-family: var(--font-heading);
+    color: var(--pink-dark);
+    font-weight: 600;
+}
+
+h1 {
+    font-size: 4em; /* Sangat besar untuk kesan mewah */
+}
+
+/* --- Tombol Navigasi --- */
+.nav-button {
+    background-color: var(--pink-dark);
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 50px;
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s, transform 0.3s;
+    margin: 10px;
+    box-shadow: 0 4px 10px rgba(232, 93, 117, 0.4);
+}
+
+.nav-button:hover {
+    background-color: #d14661;
+    transform: translateY(-2px);
+}
+
+/* --- Efek Foto Mengambang (Digunakan di Page 2) --- */
+.floating-photo-container img {
+    width: 250px;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    margin: 20px;
+    /* Animasi mengambang */
+    animation: float 6s ease-in-out infinite; 
+    transition: transform 0.3s;
+}
+
+/* Mengatur posisi mengambang yang sedikit berbeda untuk variasi */
+.floating-photo-container img:nth-child(2) {
+    animation-delay: -1s;
+}
+.floating-photo-container img:nth-child(3) {
+    animation-delay: -2s;
+}
+
+/* Keyframes untuk efek mengambang vertikal */
+@keyframes float {
+    0% { transform: translateY(0px) rotate(1deg); }
+    50% { transform: translateY(-10px) rotate(-1deg); }
+    100% { transform: translateY(0px) rotate(1deg); }
+}
+
+/* Efek Hover: Berputar sedikit saat disentuh */
+.floating-photo-container img:hover {
+    transform: scale(1.05) rotate(0deg); 
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* --- Khusus Halaman 1 --- */
+#opener-text {
+    font-size: 1.5em;
+    margin-bottom: 30px;
+    font-weight: 300;
+    animation: fadeInDown 1.5s ease-out;
+}
+@keyframes fadeInDown {
+    0% { opacity: 0; transform: translateY(-20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* --- Khusus Halaman 3 (Pesan) --- */
+.message-box-3 {
+    max-width: 600px;
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: left;
+    white-space: pre-wrap; /* Penting untuk format pesan */
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    font-size: 1.1em;
+}
+
+.signature {
+    display: block;
+    margin-top: 25px;
+    font-family: var(--font-heading);
+    font-size: 2em;
+    color: var(--pink-dark);
+    text-align: right;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 3em;
+    }
+    .floating-photo-container img {
+        width: 150px;
+        height: 250px;
+    }
+}
